@@ -15,7 +15,9 @@ export const ProjectProvider = ({ children }) => {
 
   // Axios instance with token configuration
   const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000/api",
+    // baseURL: "http://localhost:5000/api",
+    baseURL:
+      "https://real-time-collaborative-code-editor-adf9.onrender.com/api",
   });
 
   // Function to retrieve token from sessionStorage and set in headers

@@ -8,6 +8,11 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const baseUrlProduction =
+    "https://real-time-collaborative-code-editor-adf9.onrender.com/api";
+
+  const baseUrlLocal = "http://localhost:5000/api";
+
   // Register new user
   const register = async (name, email, password, profilePic) => {
     setLoading(true);
@@ -22,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        `${baseUrlProduction}/auth/register`,
         formData,
         {
           headers: {
@@ -47,10 +52,10 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     setError(""); // Reset error state
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        { email, password }
-      );
+      const response = await axios.post(`${baseUrlProduction}/auth/login`, {
+        email,
+        password,
+      });
       const { token, user } = response.data;
 
       sessionStorage.setItem("token", token);
@@ -81,14 +86,11 @@ export const AuthProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await axios.get(
-        "http://localhost:5000/api/auth/profile",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(`${baseUrlProduction}/auth/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setUser(response.data.user);
     } catch (error) {
       console.error("Error fetching user data:", error.response?.data?.message);
