@@ -54,8 +54,6 @@ async function registerUser(req, res) {
 }
 
 async function loginUser(req, res) {
-  console.log("Login Request Body:", req.body); // Check the body here
-
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ message: "Email and password are required" });
