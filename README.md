@@ -19,5 +19,3 @@ The editor supports a variety of programming languages, syntax highlighting, and
 - **Customizable Interface:** Light and dark themes for a comfortable coding experience.
 
 ---
-
-Replace `image-link-placeholder.png` with the actual URL of your image, and feel free to expand on features and technology if needed. Let me know if you need further details!
