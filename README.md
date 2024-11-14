@@ -1,6 +1,6 @@
 # Real-Time Collaborative Code Editor
 
-![Real-Time Collaborative Code Editor](image-link-placeholder.png)
+![Real-Time Collaborative Code Editor](https://github.com/abdulrcoder/real-time-collaborative-code-editor/blob/main/frontend/public/preview.png)
 
 ## Introduction
 
